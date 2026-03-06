@@ -37,6 +37,7 @@ button {
   color: white;
   border-radius: 5px;
   font-size: 16px;
+  margin: 5px;
 }
 </style>
 </head>
@@ -62,12 +63,46 @@ button {
 
 <div class="section">
   <h2>Contact</h2>
-  <button><button onclick="showMessage()">Email Me</button></button>
+  <button onclick="showMessage()">Email Me</button>
 </div>
 
-</body>
-</html><script>
+<div class="section">
+  <h2>Calculator</h2>
+
+  <input id="num1" type="number" placeholder="Number 1">
+  <input id="num2" type="number" placeholder="Number 2">
+  <br><br>
+
+  <button onclick="add()">Add</button>
+
+  <p id="result"></p>
+</div>
+
+<div class="section">
+  <button onclick="changeColor()">Canza Background</button>
+</div>
+
+<script>
 function showMessage() {
   alert("Na gode da ziyartar website dina 😊");
 }
+
+let suna = "Aliyu";
+alert("Sunana " + suna);
+
+function add() {
+  let n1 = document.getElementById("num1").value;
+  let n2 = document.getElementById("num2").value;
+
+  let result = Number(n1) + Number(n2);
+
+  document.getElementById("result").innerHTML = "Answer: " + result;
+}
+
+function changeColor() {
+  document.body.style.backgroundColor = "yellow";
+}
 </script>
+
+</body>
+</html>
