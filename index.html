@@ -82,7 +82,35 @@ button {
   <button onclick="changeColor()">Canza Background</button>
 </div>
 
+<!-- PROJECTS -->
+<div class="section">
+<h2>Projects</h2>
+
+<p>1. Calculator App</p>
+<p>2. My First Website</p>
+<p>3. Number Guess Game</p>
+
+</div>
+
+<!-- GAME -->
+<div class="section">
+
+<h2>Number Guess Game</h2>
+
+<p>Na zabi number tsakanin 1 zuwa 10. Ka gwada ka gani.</p>
+
+<input id="guess" type="number" placeholder="Saka number">
+
+<br><br>
+
+<button onclick="checkGuess()">Gwada</button>
+
+<p id="gameResult"></p>
+
+</div>
+
 <script>
+
 function showMessage() {
   alert("Na gode da ziyartar website dina 😊");
 }
@@ -102,6 +130,34 @@ function add() {
 function changeColor() {
   document.body.style.backgroundColor = "yellow";
 }
+
+// GAME LOGIC
+let secretNumber = Math.floor(Math.random() * 10) + 1;
+
+function checkGuess() {
+
+let userGuess = Number(document.getElementById("guess").value);
+
+if (userGuess === secretNumber) {
+
+document.getElementById("gameResult").innerHTML =
+"🎉 Ka yi daidai! Sabon game ya fara.";
+
+secretNumber = Math.floor(Math.random() * 10) + 1;
+
+document.getElementById("guess").value = "";
+
+}
+
+else {
+
+document.getElementById("gameResult").innerHTML =
+"❌ Ba daidai ba. Sake gwadawa.";
+
+}
+
+}
+
 </script>
 
 </body>
